@@ -1,6 +1,6 @@
 const cards = [
-  { l: "Policy Rate", v: "27.00%", s: "Maintained · May 2026" },
-  { l: "Headline Inflation", v: "23.1%", s: "April 2026 · YoY" },
+  { l: "Inflation Target", v: "8.0%", s: "± 2pp · Medium-term band" },
+  { l: "Current Inflation", v: "3.4%", s: "April 2026 · Within target" },
   { l: "Gross Reserves", v: "US$6.87B", s: "3.0 months import cover" },
   { l: "Banking Sector CAR", v: "14.2%", s: "Above 13% prudential minimum" },
 ];
