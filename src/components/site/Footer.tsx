@@ -1,3 +1,5 @@
+import logo from "@/assets/bog/logo.png";
+
 const cols = [
   { h: "About BoG", l: ["History", "Mission & Mandate", "Governance", "Board of Directors", "Departments"] },
   { h: "Policy & Research", l: ["Monetary Policy", "Financial Stability", "Working Papers", "Annual Report", "Inflation Report"] },
@@ -13,7 +15,7 @@ export function Footer() {
           <div className="lg:col-span-3">
             <div>
               <div className="bg-white/95 rounded-lg p-3 inline-block">
-                <img src={new URL("../../assets/bog/logo.png", import.meta.url).href} alt="Bank of Ghana" className="h-10 w-auto" />
+                <img src={logo} alt="Bank of Ghana" className="h-10 w-auto" />
               </div>
             </div>
             <p className="mt-5 text-sm text-primary-foreground/65 leading-relaxed">
