@@ -11,11 +11,9 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-6 py-16">
         <div className="grid lg:grid-cols-12 gap-10">
           <div className="lg:col-span-3">
-            <div className="flex items-center gap-3">
-              <span className="inline-flex h-10 w-10 items-center justify-center rounded-md bg-gold-gradient text-gold-foreground font-display font-bold">₵</span>
-              <div>
-                <div className="font-semibold">Bank of Ghana</div>
-                <div className="text-[10px] uppercase tracking-[0.18em] text-primary-foreground/60">Central Bank · Est. 1957</div>
+            <div>
+              <div className="bg-white/95 rounded-lg p-3 inline-block">
+                <img src={new URL("../../assets/bog/logo.png", import.meta.url).href} alt="Bank of Ghana" className="h-10 w-auto" />
               </div>
             </div>
             <p className="mt-5 text-sm text-primary-foreground/65 leading-relaxed">

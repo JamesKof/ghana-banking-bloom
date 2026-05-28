@@ -1,4 +1,4 @@
-import skyline from "@/assets/accra-skyline.jpg";
+import skyline from "@/assets/bog/hero-banner.jpg";
 export function CTA() {
   return (
     <section className="px-6 pb-24">

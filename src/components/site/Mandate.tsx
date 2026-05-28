@@ -1,4 +1,4 @@
-import dataViz from "@/assets/data-viz.jpg";
+import dataViz from "@/assets/bog/bank-square.jpg";
 
 const pillars = [
   { k: "01", t: "Price Stability", d: "Anchor inflation expectations through a forward-looking inflation-targeting framework." },
@@ -21,11 +21,11 @@ export function Mandate() {
             we operate with independence, transparency and a duty to the people of Ghana.
           </p>
           <div className="mt-8 relative rounded-2xl overflow-hidden shadow-soft">
-            <img src={dataViz} alt="Inflation trajectory" width={1200} height={900} loading="lazy" className="w-full h-64 object-cover" />
-            <div className="absolute inset-0 bg-gradient-to-tr from-primary/70 to-transparent" />
+            <img src={dataViz} alt="Licensed banks" loading="lazy" className="w-full h-64 object-cover" />
+            <div className="absolute inset-0 bg-gradient-to-tr from-primary/80 to-transparent" />
             <div className="absolute bottom-4 left-4 text-primary-foreground">
               <div className="text-xs uppercase tracking-widest opacity-80">Headline Inflation</div>
-              <div className="font-display text-3xl">23.1% <span className="text-gold text-base">↓ disinflating</span></div>
+              <div className="font-display text-3xl">3.4% <span className="text-gold text-base">↓ within target</span></div>
             </div>
           </div>
         </div>

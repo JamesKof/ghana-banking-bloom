@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { Search, Menu, X, ChevronDown } from "lucide-react";
+import logo from "@/assets/bog/logo.png";
+import kente from "@/assets/bog/kente-bar.jpg";
 
 const links = [
   { label: "About", items: ["History", "Governance", "Board of Directors", "Departments"] },
@@ -21,8 +23,7 @@ export function Nav() {
 
   return (
     <>
-      {/* Top utility bar */}
-      <div className="hidden md:block bg-primary-foreground/0 border-b border-border/60 text-xs">
+      <div className="hidden md:block border-b border-border/60 text-xs">
         <div className="mx-auto max-w-7xl px-6 h-9 flex items-center justify-between text-muted-foreground">
           <div className="flex items-center gap-5">
             <span>One Thorpe Road, Accra · Ghana</span>
@@ -41,17 +42,10 @@ export function Nav() {
         </div>
       </div>
 
-      <header className={`sticky top-0 z-50 transition-all ${scrolled ? "bg-background/85 backdrop-blur-xl shadow-soft" : "bg-background/60 backdrop-blur"}`}>
-        <div className="mx-auto max-w-7xl px-6 h-16 flex items-center justify-between">
+      <header className={`sticky top-0 z-50 transition-all ${scrolled ? "bg-background/90 backdrop-blur-xl shadow-soft" : "bg-background/70 backdrop-blur"}`}>
+        <div className="mx-auto max-w-7xl px-6 h-20 flex items-center justify-between">
           <a href="#" className="flex items-center gap-3">
-            <span className="relative inline-flex h-9 w-9 items-center justify-center rounded-md bg-hero text-primary-foreground font-display font-bold shadow-soft">
-              <span className="absolute inset-0 rounded-md ring-gold" />
-              ₵
-            </span>
-            <span className="flex flex-col leading-none">
-              <span className="text-[15px] font-semibold tracking-tight">Bank of Ghana</span>
-              <span className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground">Central Bank · Est. 1957</span>
-            </span>
+            <img src={logo} alt="Bank of Ghana" width={180} height={36} className="h-10 w-auto" />
           </a>
 
           <nav className="hidden lg:flex items-center gap-1">
@@ -93,6 +87,8 @@ export function Nav() {
             </div>
           </div>
         )}
+        {/* Kente strip — authentic BoG brand element */}
+        <div className="h-1.5 w-full" style={{ backgroundImage: `url(${kente})`, backgroundSize: "auto 100%", backgroundRepeat: "repeat-x" }} />
       </header>
     </>
   );
