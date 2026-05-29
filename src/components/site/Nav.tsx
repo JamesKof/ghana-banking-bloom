@@ -1,15 +1,16 @@
 import { useEffect, useState } from "react";
 import { Search, Menu, X, ChevronDown } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 import logo from "@/assets/bog/logo.png";
 import kente from "@/assets/bog/kente-bar.jpg";
 
 const links = [
-  { label: "About", items: ["History", "Governance", "Board of Directors", "Departments"] },
-  { label: "Monetary Policy", items: ["MPC Decisions", "Press Releases", "Inflation Report"] },
-  { label: "Financial Stability", items: ["Reports", "Supervision", "Macroprudential"] },
-  { label: "Currency", items: ["Banknotes & Coins", "Exchange Rates", "Clean Note Policy"] },
-  { label: "Statistics", items: ["Time Series", "Banking Sector", "External Sector"] },
-  { label: "Publications", items: ["Annual Report", "Bulletins", "Speeches"] },
+  { label: "About", to: "/about", items: ["History", "Governance", "Board of Directors", "Departments"] },
+  { label: "Monetary Policy", to: "/monetary-policy", items: ["MPC Decisions", "Press Releases", "Inflation Report"] },
+  { label: "Financial Stability", to: "/financial-stability", items: ["Reports", "Supervision", "Macroprudential"] },
+  { label: "Currency", to: "/currency", items: ["Banknotes & Coins", "Exchange Rates", "Clean Note Policy"] },
+  { label: "Statistics", to: "/statistics", items: ["Time Series", "Banking Sector", "External Sector"] },
+  { label: "Publications", to: "/publications", items: ["Annual Report", "Bulletins", "Speeches"] },
 ];
 
 export function Nav() {
