@@ -1,11 +1,12 @@
+import { Link } from "@tanstack/react-router";
 import { Landmark, LineChart, FileText, Banknote, ShieldCheck, GraduationCap } from "lucide-react";
 const items = [
-  { icon: Landmark, t: "Monetary Policy", d: "Decisions, statements & reports" },
-  { icon: LineChart, t: "Statistics & Data", d: "Time series and dashboards" },
-  { icon: Banknote, t: "Currency & FX", d: "Banknotes, rates and reserves" },
-  { icon: ShieldCheck, t: "Supervision", d: "Banks, SDIs & payment systems" },
-  { icon: FileText, t: "Notices & Circulars", d: "Regulatory communications" },
-  { icon: GraduationCap, t: "Financial Literacy", d: "Education and resources" },
+  { icon: Landmark, t: "Monetary Policy", d: "Decisions, statements & reports", to: "/monetary-policy" },
+  { icon: LineChart, t: "Statistics & Data", d: "Time series and dashboards", to: "/statistics" },
+  { icon: Banknote, t: "Currency & FX", d: "Banknotes, rates and reserves", to: "/currency" },
+  { icon: ShieldCheck, t: "Supervision", d: "Banks, SDIs & payment systems", to: "/financial-stability" },
+  { icon: FileText, t: "Publications", d: "Reports, bulletins, speeches", to: "/publications" },
+  { icon: GraduationCap, t: "About the Bank", d: "Mandate, history, governance", to: "/about" },
 ];
 export function QuickLinks() {
   return (

@@ -1,22 +1,44 @@
+import { Link } from "@tanstack/react-router";
 import logo from "@/assets/bog/logo.png";
 
-const cols = [
-  { h: "About BoG", l: ["History", "Mission & Mandate", "Governance", "Board of Directors", "Departments"] },
-  { h: "Policy & Research", l: ["Monetary Policy", "Financial Stability", "Working Papers", "Annual Report", "Inflation Report"] },
-  { h: "Markets", l: ["Exchange Rates", "Government Securities", "Open Market Ops", "Reserves Management"] },
-  { h: "Supervision", l: ["Licensed Banks", "SDIs", "Payment Systems", "Notices & Circulars", "AML/CFT"] },
-  { h: "Public", l: ["Careers", "Procurement", "Tenders", "Contact", "Whistleblower"] },
+const cols: { h: string; l: { t: string; to: string }[] }[] = [
+  { h: "About BoG", l: [
+    { t: "History", to: "/about" },
+    { t: "Mission & Mandate", to: "/about" },
+    { t: "Governance", to: "/about" },
+    { t: "Departments", to: "/about" },
+  ]},
+  { h: "Policy & Research", l: [
+    { t: "Monetary Policy", to: "/monetary-policy" },
+    { t: "Inflation Report", to: "/publications" },
+    { t: "Working Papers", to: "/publications" },
+    { t: "Annual Report", to: "/publications" },
+  ]},
+  { h: "Markets", l: [
+    { t: "Exchange Rates", to: "/currency" },
+    { t: "Banknotes & Coins", to: "/currency" },
+    { t: "Statistics", to: "/statistics" },
+  ]},
+  { h: "Supervision", l: [
+    { t: "Financial Stability", to: "/financial-stability" },
+    { t: "Licensed Banks", to: "/financial-stability" },
+    { t: "Payment Systems", to: "/financial-stability" },
+  ]},
+  { h: "Public", l: [
+    { t: "Contact", to: "/contact" },
+    { t: "Careers", to: "/contact" },
+    { t: "Procurement", to: "/contact" },
+  ]},
 ];
+
 export function Footer() {
   return (
     <footer className="bg-[var(--primary-deep)] text-primary-foreground">
       <div className="mx-auto max-w-7xl px-6 py-16">
         <div className="grid lg:grid-cols-12 gap-10">
           <div className="lg:col-span-3">
-            <div>
-              <div className="bg-white/95 rounded-lg p-3 inline-block">
-                <img src={logo} alt="Bank of Ghana" className="h-10 w-auto" />
-              </div>
+            <div className="bg-white/95 rounded-lg p-3 inline-block">
+              <img src={logo} alt="Bank of Ghana" className="h-10 w-auto" />
             </div>
             <p className="mt-5 text-sm text-primary-foreground/65 leading-relaxed">
               One Thorpe Road<br />
@@ -30,7 +52,9 @@ export function Footer() {
               <div key={c.h}>
                 <div className="text-xs uppercase tracking-widest text-gold font-semibold">{c.h}</div>
                 <ul className="mt-4 space-y-2.5">
-                  {c.l.map((x) => <li key={x}><a href="#" className="text-sm text-primary-foreground/70 hover:text-primary-foreground transition">{x}</a></li>)}
+                  {c.l.map((x) => (
+                    <li key={x.t}><Link to={x.to} className="text-sm text-primary-foreground/70 hover:text-primary-foreground transition">{x.t}</Link></li>
+                  ))}
                 </ul>
               </div>
             ))}
