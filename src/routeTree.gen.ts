@@ -9,8 +9,50 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as StatisticsRouteImport } from './routes/statistics'
+import { Route as PublicationsRouteImport } from './routes/publications'
+import { Route as MonetaryPolicyRouteImport } from './routes/monetary-policy'
+import { Route as FinancialStabilityRouteImport } from './routes/financial-stability'
+import { Route as CurrencyRouteImport } from './routes/currency'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 
+const StatisticsRoute = StatisticsRouteImport.update({
+  id: '/statistics',
+  path: '/statistics',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PublicationsRoute = PublicationsRouteImport.update({
+  id: '/publications',
+  path: '/publications',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MonetaryPolicyRoute = MonetaryPolicyRouteImport.update({
+  id: '/monetary-policy',
+  path: '/monetary-policy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FinancialStabilityRoute = FinancialStabilityRouteImport.update({
+  id: '/financial-stability',
+  path: '/financial-stability',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CurrencyRoute = CurrencyRouteImport.update({
+  id: '/currency',
+  path: '/currency',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +61,130 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
+  '/currency': typeof CurrencyRoute
+  '/financial-stability': typeof FinancialStabilityRoute
+  '/monetary-policy': typeof MonetaryPolicyRoute
+  '/publications': typeof PublicationsRoute
+  '/statistics': typeof StatisticsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
+  '/currency': typeof CurrencyRoute
+  '/financial-stability': typeof FinancialStabilityRoute
+  '/monetary-policy': typeof MonetaryPolicyRoute
+  '/publications': typeof PublicationsRoute
+  '/statistics': typeof StatisticsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
+  '/currency': typeof CurrencyRoute
+  '/financial-stability': typeof FinancialStabilityRoute
+  '/monetary-policy': typeof MonetaryPolicyRoute
+  '/publications': typeof PublicationsRoute
+  '/statistics': typeof StatisticsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/currency'
+    | '/financial-stability'
+    | '/monetary-policy'
+    | '/publications'
+    | '/statistics'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/currency'
+    | '/financial-stability'
+    | '/monetary-policy'
+    | '/publications'
+    | '/statistics'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/currency'
+    | '/financial-stability'
+    | '/monetary-policy'
+    | '/publications'
+    | '/statistics'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  ContactRoute: typeof ContactRoute
+  CurrencyRoute: typeof CurrencyRoute
+  FinancialStabilityRoute: typeof FinancialStabilityRoute
+  MonetaryPolicyRoute: typeof MonetaryPolicyRoute
+  PublicationsRoute: typeof PublicationsRoute
+  StatisticsRoute: typeof StatisticsRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/statistics': {
+      id: '/statistics'
+      path: '/statistics'
+      fullPath: '/statistics'
+      preLoaderRoute: typeof StatisticsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/publications': {
+      id: '/publications'
+      path: '/publications'
+      fullPath: '/publications'
+      preLoaderRoute: typeof PublicationsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/monetary-policy': {
+      id: '/monetary-policy'
+      path: '/monetary-policy'
+      fullPath: '/monetary-policy'
+      preLoaderRoute: typeof MonetaryPolicyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/financial-stability': {
+      id: '/financial-stability'
+      path: '/financial-stability'
+      fullPath: '/financial-stability'
+      preLoaderRoute: typeof FinancialStabilityRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/currency': {
+      id: '/currency'
+      path: '/currency'
+      fullPath: '/currency'
+      preLoaderRoute: typeof CurrencyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,7 +197,24 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  ContactRoute: ContactRoute,
+  CurrencyRoute: CurrencyRoute,
+  FinancialStabilityRoute: FinancialStabilityRoute,
+  MonetaryPolicyRoute: MonetaryPolicyRoute,
+  PublicationsRoute: PublicationsRoute,
+  StatisticsRoute: StatisticsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
