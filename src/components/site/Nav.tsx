@@ -83,8 +83,9 @@ export function Nav() {
           <div className="lg:hidden border-t bg-background">
             <div className="px-6 py-4 space-y-1">
               {links.map((l) => (
-                <a key={l.label} href="#" className="block py-2 text-sm font-medium">{l.label}</a>
+                <Link key={l.label} to={l.to} onClick={() => setOpen(false)} className="block py-2 text-sm font-medium">{l.label}</Link>
               ))}
+              <Link to="/contact" onClick={() => setOpen(false)} className="block py-2 text-sm font-medium">Contact</Link>
             </div>
           </div>
         )}
