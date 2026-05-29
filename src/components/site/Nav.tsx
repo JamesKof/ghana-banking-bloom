@@ -1,15 +1,16 @@
 import { useEffect, useState } from "react";
 import { Search, Menu, X, ChevronDown } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 import logo from "@/assets/bog/logo.png";
 import kente from "@/assets/bog/kente-bar.jpg";
 
 const links = [
-  { label: "About", items: ["History", "Governance", "Board of Directors", "Departments"] },
-  { label: "Monetary Policy", items: ["MPC Decisions", "Press Releases", "Inflation Report"] },
-  { label: "Financial Stability", items: ["Reports", "Supervision", "Macroprudential"] },
-  { label: "Currency", items: ["Banknotes & Coins", "Exchange Rates", "Clean Note Policy"] },
-  { label: "Statistics", items: ["Time Series", "Banking Sector", "External Sector"] },
-  { label: "Publications", items: ["Annual Report", "Bulletins", "Speeches"] },
+  { label: "About", to: "/about", items: ["History", "Governance", "Board of Directors", "Departments"] },
+  { label: "Monetary Policy", to: "/monetary-policy", items: ["MPC Decisions", "Press Releases", "Inflation Report"] },
+  { label: "Financial Stability", to: "/financial-stability", items: ["Reports", "Supervision", "Macroprudential"] },
+  { label: "Currency", to: "/currency", items: ["Banknotes & Coins", "Exchange Rates", "Clean Note Policy"] },
+  { label: "Statistics", to: "/statistics", items: ["Time Series", "Banking Sector", "External Sector"] },
+  { label: "Publications", to: "/publications", items: ["Annual Report", "Bulletins", "Speeches"] },
 ];
 
 export function Nav() {
@@ -44,21 +45,21 @@ export function Nav() {
 
       <header className={`sticky top-0 z-50 transition-all ${scrolled ? "bg-background/90 backdrop-blur-xl shadow-soft" : "bg-background/70 backdrop-blur"}`}>
         <div className="mx-auto max-w-7xl px-6 h-20 flex items-center justify-between">
-          <a href="#" className="flex items-center gap-3">
+          <Link to="/" className="flex items-center gap-3">
             <img src={logo} alt="Bank of Ghana" width={180} height={36} className="h-10 w-auto" />
-          </a>
+          </Link>
 
           <nav className="hidden lg:flex items-center gap-1">
             {links.map((l) => (
               <div key={l.label} className="group relative">
-                <button className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-foreground/80 hover:text-foreground rounded-md transition">
+                <Link to={l.to} className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-foreground/80 hover:text-foreground rounded-md transition">
                   {l.label}
                   <ChevronDown className="h-3.5 w-3.5 opacity-50 group-hover:rotate-180 transition" />
-                </button>
+                </Link>
                 <div className="invisible opacity-0 group-hover:visible group-hover:opacity-100 absolute left-0 top-full pt-2 w-56 transition">
                   <div className="rounded-xl border bg-card shadow-elegant p-2">
                     {l.items.map((i) => (
-                      <a key={i} href="#" className="block rounded-md px-3 py-2 text-sm hover:bg-secondary transition">{i}</a>
+                      <Link key={i} to={l.to} className="block rounded-md px-3 py-2 text-sm hover:bg-secondary transition">{i}</Link>
                     ))}
                   </div>
                 </div>
@@ -82,8 +83,9 @@ export function Nav() {
           <div className="lg:hidden border-t bg-background">
             <div className="px-6 py-4 space-y-1">
               {links.map((l) => (
-                <a key={l.label} href="#" className="block py-2 text-sm font-medium">{l.label}</a>
+                <Link key={l.label} to={l.to} onClick={() => setOpen(false)} className="block py-2 text-sm font-medium">{l.label}</Link>
               ))}
+              <Link to="/contact" onClick={() => setOpen(false)} className="block py-2 text-sm font-medium">Contact</Link>
             </div>
           </div>
         )}
