@@ -13,8 +13,8 @@ export function QuickLinks() {
     <section className="relative -mt-12 z-10">
       <div className="mx-auto max-w-7xl px-6">
         <div className="rounded-3xl bg-card shadow-elegant border p-3 md:p-4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-1">
-          {items.map(({ icon: Icon, t, d }) => (
-            <a key={t} href="#" className="group relative rounded-2xl p-4 hover:bg-secondary transition flex flex-col gap-3">
+          {items.map(({ icon: Icon, t, d, to }) => (
+            <Link key={t} to={to} className="group relative rounded-2xl p-4 hover:bg-secondary transition flex flex-col gap-3">
               <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-secondary text-primary group-hover:bg-primary group-hover:text-primary-foreground transition">
                 <Icon className="h-5 w-5" />
               </span>
@@ -22,7 +22,7 @@ export function QuickLinks() {
                 <div className="text-sm font-semibold">{t}</div>
                 <div className="text-xs text-muted-foreground mt-0.5">{d}</div>
               </div>
-            </a>
+            </Link>
           ))}
         </div>
       </div>
