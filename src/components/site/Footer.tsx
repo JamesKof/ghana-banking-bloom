@@ -5,13 +5,13 @@ const cols: { h: string; l: { t: string; to: string }[] }[] = [
   { h: "About BoG", l: [
     { t: "History", to: "/about" },
     { t: "Mission & Mandate", to: "/about" },
-    { t: "Governance", to: "/about" },
-    { t: "Departments", to: "/about" },
+    { t: "Governance", to: "/governance" },
+    { t: "Board of Directors", to: "/board" },
   ]},
   { h: "Policy & Research", l: [
     { t: "Monetary Policy", to: "/monetary-policy" },
+    { t: "Press Releases", to: "/press-releases" },
     { t: "Inflation Report", to: "/publications" },
-    { t: "Working Papers", to: "/publications" },
     { t: "Annual Report", to: "/publications" },
   ]},
   { h: "Markets", l: [
@@ -26,8 +26,9 @@ const cols: { h: string; l: { t: string; to: string }[] }[] = [
   ]},
   { h: "Public", l: [
     { t: "Contact", to: "/contact" },
-    { t: "Careers", to: "/contact" },
-    { t: "Procurement", to: "/contact" },
+    { t: "eServices", to: "/eservices" },
+    { t: "Careers", to: "/careers" },
+    { t: "Procurement", to: "/procurement" },
   ]},
 ];
 
@@ -67,10 +68,10 @@ export function Footer() {
             <span>An institution of the Republic of Ghana 🇬🇭</span>
           </div>
           <div className="flex items-center gap-5">
-            <a href="#">Privacy</a>
-            <a href="#">Accessibility</a>
-            <a href="#">Terms</a>
-            <a href="#">Sitemap</a>
+            <Link to="/privacy" className="hover:text-primary-foreground">Privacy</Link>
+            <Link to="/accessibility" className="hover:text-primary-foreground">Accessibility</Link>
+            <Link to="/terms" className="hover:text-primary-foreground">Terms</Link>
+            <Link to="/sitemap" className="hover:text-primary-foreground">Sitemap</Link>
           </div>
         </div>
       </div>

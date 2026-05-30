@@ -9,18 +9,44 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as TermsRouteImport } from './routes/terms'
+import { Route as TendersRouteImport } from './routes/tenders'
 import { Route as StatisticsRouteImport } from './routes/statistics'
+import { Route as SitemapRouteImport } from './routes/sitemap'
 import { Route as PublicationsRouteImport } from './routes/publications'
+import { Route as ProcurementRouteImport } from './routes/procurement'
+import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as PressReleasesRouteImport } from './routes/press-releases'
 import { Route as MonetaryPolicyRouteImport } from './routes/monetary-policy'
+import { Route as GovernanceRouteImport } from './routes/governance'
 import { Route as FinancialStabilityRouteImport } from './routes/financial-stability'
+import { Route as EservicesRouteImport } from './routes/eservices'
 import { Route as CurrencyRouteImport } from './routes/currency'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as CareersRouteImport } from './routes/careers'
+import { Route as BoardRouteImport } from './routes/board'
+import { Route as AccessibilityRouteImport } from './routes/accessibility'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 
+const TermsRoute = TermsRouteImport.update({
+  id: '/terms',
+  path: '/terms',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TendersRoute = TendersRouteImport.update({
+  id: '/tenders',
+  path: '/tenders',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const StatisticsRoute = StatisticsRouteImport.update({
   id: '/statistics',
   path: '/statistics',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapRoute = SitemapRouteImport.update({
+  id: '/sitemap',
+  path: '/sitemap',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PublicationsRoute = PublicationsRouteImport.update({
@@ -28,14 +54,39 @@ const PublicationsRoute = PublicationsRouteImport.update({
   path: '/publications',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ProcurementRoute = ProcurementRouteImport.update({
+  id: '/procurement',
+  path: '/procurement',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PressReleasesRoute = PressReleasesRouteImport.update({
+  id: '/press-releases',
+  path: '/press-releases',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const MonetaryPolicyRoute = MonetaryPolicyRouteImport.update({
   id: '/monetary-policy',
   path: '/monetary-policy',
   getParentRoute: () => rootRouteImport,
 } as any)
+const GovernanceRoute = GovernanceRouteImport.update({
+  id: '/governance',
+  path: '/governance',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const FinancialStabilityRoute = FinancialStabilityRouteImport.update({
   id: '/financial-stability',
   path: '/financial-stability',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EservicesRoute = EservicesRouteImport.update({
+  id: '/eservices',
+  path: '/eservices',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CurrencyRoute = CurrencyRouteImport.update({
@@ -46,6 +97,21 @@ const CurrencyRoute = CurrencyRouteImport.update({
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CareersRoute = CareersRouteImport.update({
+  id: '/careers',
+  path: '/careers',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BoardRoute = BoardRouteImport.update({
+  id: '/board',
+  path: '/board',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AccessibilityRoute = AccessibilityRouteImport.update({
+  id: '/accessibility',
+  path: '/accessibility',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AboutRoute = AboutRouteImport.update({
@@ -62,85 +128,183 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/accessibility': typeof AccessibilityRoute
+  '/board': typeof BoardRoute
+  '/careers': typeof CareersRoute
   '/contact': typeof ContactRoute
   '/currency': typeof CurrencyRoute
+  '/eservices': typeof EservicesRoute
   '/financial-stability': typeof FinancialStabilityRoute
+  '/governance': typeof GovernanceRoute
   '/monetary-policy': typeof MonetaryPolicyRoute
+  '/press-releases': typeof PressReleasesRoute
+  '/privacy': typeof PrivacyRoute
+  '/procurement': typeof ProcurementRoute
   '/publications': typeof PublicationsRoute
+  '/sitemap': typeof SitemapRoute
   '/statistics': typeof StatisticsRoute
+  '/tenders': typeof TendersRoute
+  '/terms': typeof TermsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/accessibility': typeof AccessibilityRoute
+  '/board': typeof BoardRoute
+  '/careers': typeof CareersRoute
   '/contact': typeof ContactRoute
   '/currency': typeof CurrencyRoute
+  '/eservices': typeof EservicesRoute
   '/financial-stability': typeof FinancialStabilityRoute
+  '/governance': typeof GovernanceRoute
   '/monetary-policy': typeof MonetaryPolicyRoute
+  '/press-releases': typeof PressReleasesRoute
+  '/privacy': typeof PrivacyRoute
+  '/procurement': typeof ProcurementRoute
   '/publications': typeof PublicationsRoute
+  '/sitemap': typeof SitemapRoute
   '/statistics': typeof StatisticsRoute
+  '/tenders': typeof TendersRoute
+  '/terms': typeof TermsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/accessibility': typeof AccessibilityRoute
+  '/board': typeof BoardRoute
+  '/careers': typeof CareersRoute
   '/contact': typeof ContactRoute
   '/currency': typeof CurrencyRoute
+  '/eservices': typeof EservicesRoute
   '/financial-stability': typeof FinancialStabilityRoute
+  '/governance': typeof GovernanceRoute
   '/monetary-policy': typeof MonetaryPolicyRoute
+  '/press-releases': typeof PressReleasesRoute
+  '/privacy': typeof PrivacyRoute
+  '/procurement': typeof ProcurementRoute
   '/publications': typeof PublicationsRoute
+  '/sitemap': typeof SitemapRoute
   '/statistics': typeof StatisticsRoute
+  '/tenders': typeof TendersRoute
+  '/terms': typeof TermsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
     | '/about'
+    | '/accessibility'
+    | '/board'
+    | '/careers'
     | '/contact'
     | '/currency'
+    | '/eservices'
     | '/financial-stability'
+    | '/governance'
     | '/monetary-policy'
+    | '/press-releases'
+    | '/privacy'
+    | '/procurement'
     | '/publications'
+    | '/sitemap'
     | '/statistics'
+    | '/tenders'
+    | '/terms'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/about'
+    | '/accessibility'
+    | '/board'
+    | '/careers'
     | '/contact'
     | '/currency'
+    | '/eservices'
     | '/financial-stability'
+    | '/governance'
     | '/monetary-policy'
+    | '/press-releases'
+    | '/privacy'
+    | '/procurement'
     | '/publications'
+    | '/sitemap'
     | '/statistics'
+    | '/tenders'
+    | '/terms'
   id:
     | '__root__'
     | '/'
     | '/about'
+    | '/accessibility'
+    | '/board'
+    | '/careers'
     | '/contact'
     | '/currency'
+    | '/eservices'
     | '/financial-stability'
+    | '/governance'
     | '/monetary-policy'
+    | '/press-releases'
+    | '/privacy'
+    | '/procurement'
     | '/publications'
+    | '/sitemap'
     | '/statistics'
+    | '/tenders'
+    | '/terms'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  AccessibilityRoute: typeof AccessibilityRoute
+  BoardRoute: typeof BoardRoute
+  CareersRoute: typeof CareersRoute
   ContactRoute: typeof ContactRoute
   CurrencyRoute: typeof CurrencyRoute
+  EservicesRoute: typeof EservicesRoute
   FinancialStabilityRoute: typeof FinancialStabilityRoute
+  GovernanceRoute: typeof GovernanceRoute
   MonetaryPolicyRoute: typeof MonetaryPolicyRoute
+  PressReleasesRoute: typeof PressReleasesRoute
+  PrivacyRoute: typeof PrivacyRoute
+  ProcurementRoute: typeof ProcurementRoute
   PublicationsRoute: typeof PublicationsRoute
+  SitemapRoute: typeof SitemapRoute
   StatisticsRoute: typeof StatisticsRoute
+  TendersRoute: typeof TendersRoute
+  TermsRoute: typeof TermsRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/terms': {
+      id: '/terms'
+      path: '/terms'
+      fullPath: '/terms'
+      preLoaderRoute: typeof TermsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tenders': {
+      id: '/tenders'
+      path: '/tenders'
+      fullPath: '/tenders'
+      preLoaderRoute: typeof TendersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/statistics': {
       id: '/statistics'
       path: '/statistics'
       fullPath: '/statistics'
       preLoaderRoute: typeof StatisticsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap': {
+      id: '/sitemap'
+      path: '/sitemap'
+      fullPath: '/sitemap'
+      preLoaderRoute: typeof SitemapRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/publications': {
@@ -150,6 +314,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PublicationsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/procurement': {
+      id: '/procurement'
+      path: '/procurement'
+      fullPath: '/procurement'
+      preLoaderRoute: typeof ProcurementRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/press-releases': {
+      id: '/press-releases'
+      path: '/press-releases'
+      fullPath: '/press-releases'
+      preLoaderRoute: typeof PressReleasesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/monetary-policy': {
       id: '/monetary-policy'
       path: '/monetary-policy'
@@ -157,11 +342,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MonetaryPolicyRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/governance': {
+      id: '/governance'
+      path: '/governance'
+      fullPath: '/governance'
+      preLoaderRoute: typeof GovernanceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/financial-stability': {
       id: '/financial-stability'
       path: '/financial-stability'
       fullPath: '/financial-stability'
       preLoaderRoute: typeof FinancialStabilityRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/eservices': {
+      id: '/eservices'
+      path: '/eservices'
+      fullPath: '/eservices'
+      preLoaderRoute: typeof EservicesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/currency': {
@@ -176,6 +375,27 @@ declare module '@tanstack/react-router' {
       path: '/contact'
       fullPath: '/contact'
       preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/careers': {
+      id: '/careers'
+      path: '/careers'
+      fullPath: '/careers'
+      preLoaderRoute: typeof CareersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/board': {
+      id: '/board'
+      path: '/board'
+      fullPath: '/board'
+      preLoaderRoute: typeof BoardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/accessibility': {
+      id: '/accessibility'
+      path: '/accessibility'
+      fullPath: '/accessibility'
+      preLoaderRoute: typeof AccessibilityRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/about': {
@@ -198,12 +418,23 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  AccessibilityRoute: AccessibilityRoute,
+  BoardRoute: BoardRoute,
+  CareersRoute: CareersRoute,
   ContactRoute: ContactRoute,
   CurrencyRoute: CurrencyRoute,
+  EservicesRoute: EservicesRoute,
   FinancialStabilityRoute: FinancialStabilityRoute,
+  GovernanceRoute: GovernanceRoute,
   MonetaryPolicyRoute: MonetaryPolicyRoute,
+  PressReleasesRoute: PressReleasesRoute,
+  PrivacyRoute: PrivacyRoute,
+  ProcurementRoute: ProcurementRoute,
   PublicationsRoute: PublicationsRoute,
+  SitemapRoute: SitemapRoute,
   StatisticsRoute: StatisticsRoute,
+  TendersRoute: TendersRoute,
+  TermsRoute: TermsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

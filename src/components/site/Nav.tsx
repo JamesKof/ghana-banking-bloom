@@ -32,10 +32,10 @@ export function Nav() {
             <span>+233 (0)302 666 174</span>
           </div>
           <div className="flex items-center gap-5">
-            <a href="#" className="hover:text-foreground transition">Careers</a>
-            <a href="#" className="hover:text-foreground transition">Procurement</a>
-            <a href="#" className="hover:text-foreground transition">Tenders</a>
-            <a href="#" className="hover:text-foreground transition">Contact</a>
+            <Link to="/careers" className="hover:text-foreground transition">Careers</Link>
+            <Link to="/procurement" className="hover:text-foreground transition">Procurement</Link>
+            <Link to="/tenders" className="hover:text-foreground transition">Tenders</Link>
+            <Link to="/contact" className="hover:text-foreground transition">Contact</Link>
             <span className="opacity-50">|</span>
             <a href="#" className="hover:text-foreground transition">EN</a>
             <a href="#" className="text-muted-foreground/60">FR</a>
@@ -71,9 +71,9 @@ export function Nav() {
             <button className="hidden md:inline-flex h-9 w-9 items-center justify-center rounded-full hover:bg-secondary transition" aria-label="Search">
               <Search className="h-4 w-4" />
             </button>
-            <a href="#" className="hidden md:inline-flex items-center rounded-full bg-primary text-primary-foreground px-4 h-9 text-sm font-medium hover:bg-[var(--primary-deep)] transition shadow-soft">
+            <Link to="/eservices" className="hidden md:inline-flex items-center rounded-full bg-primary text-primary-foreground px-4 h-9 text-sm font-medium hover:bg-[var(--primary-deep)] transition shadow-soft">
               eServices
-            </a>
+            </Link>
             <button onClick={() => setOpen(!open)} className="lg:hidden h-9 w-9 inline-flex items-center justify-center rounded-md hover:bg-secondary" aria-label="Menu">
               {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </button>
