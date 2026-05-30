@@ -32,10 +32,10 @@ export function Nav() {
             <span>+233 (0)302 666 174</span>
           </div>
           <div className="flex items-center gap-5">
-            <a href="#" className="hover:text-foreground transition">Careers</a>
-            <a href="#" className="hover:text-foreground transition">Procurement</a>
-            <a href="#" className="hover:text-foreground transition">Tenders</a>
-            <a href="#" className="hover:text-foreground transition">Contact</a>
+            <Link to="/careers" className="hover:text-foreground transition">Careers</Link>
+            <Link to="/procurement" className="hover:text-foreground transition">Procurement</Link>
+            <Link to="/tenders" className="hover:text-foreground transition">Tenders</Link>
+            <Link to="/contact" className="hover:text-foreground transition">Contact</Link>
             <span className="opacity-50">|</span>
             <a href="#" className="hover:text-foreground transition">EN</a>
             <a href="#" className="text-muted-foreground/60">FR</a>
