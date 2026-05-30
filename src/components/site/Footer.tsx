@@ -67,10 +67,10 @@ export function Footer() {
             <span>An institution of the Republic of Ghana 🇬🇭</span>
           </div>
           <div className="flex items-center gap-5">
-            <a href="#">Privacy</a>
-            <a href="#">Accessibility</a>
-            <a href="#">Terms</a>
-            <a href="#">Sitemap</a>
+            <Link to="/privacy" className="hover:text-primary-foreground">Privacy</Link>
+            <Link to="/accessibility" className="hover:text-primary-foreground">Accessibility</Link>
+            <Link to="/terms" className="hover:text-primary-foreground">Terms</Link>
+            <Link to="/sitemap" className="hover:text-primary-foreground">Sitemap</Link>
           </div>
         </div>
       </div>
