@@ -45,21 +45,9 @@ export function News() {
               <Link key={i} to={n.to!} className={className}>{Inner}</Link>
             );
           })}
-              <div className="relative h-56 overflow-hidden bg-secondary">
-                <img src={n.img} alt="" loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition duration-700" />
-                <span className="absolute top-4 left-4 text-[10px] uppercase tracking-widest bg-background/90 backdrop-blur px-2.5 py-1 rounded-full font-semibold">{n.tag}</span>
-              </div>
-              <div className="p-6">
-                <div className="text-xs text-muted-foreground">{n.date}</div>
-                <h3 className="mt-2 text-lg font-semibold leading-snug group-hover:text-primary transition">{n.title}</h3>
-                <div className="mt-5 inline-flex items-center gap-1 text-sm font-medium text-primary">
-                  Read more <ArrowUpRight className="h-4 w-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition" />
-                </div>
-              </div>
-            </a>
-          ))}
         </div>
       </div>
     </section>
   );
 }
+
