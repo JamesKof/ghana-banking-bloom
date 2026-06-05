@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageShell } from "@/components/site/PageShell";
 import { PageHero } from "@/components/site/PageHero";
 import { FileText, Download, ArrowUpRight } from "lucide-react";
+import { BOG, externalLinkProps } from "@/lib/external";
 
 export const Route = createFileRoute("/procurement")({
   head: () => ({
@@ -42,7 +43,7 @@ function ProcurementPage() {
           </div>
           <div className="rounded-2xl border bg-card divide-y overflow-hidden">
             {notices.map((n) => (
-              <a key={n.r} href="#" className="group flex items-center gap-6 p-6 hover:bg-secondary/40 transition">
+              <a key={n.r} href={BOG.procurement} {...externalLinkProps} className="group flex items-center gap-6 p-6 hover:bg-secondary/40 transition">
                 <span className="hidden md:inline-flex h-11 w-11 items-center justify-center rounded-xl bg-secondary text-primary"><FileText className="h-5 w-5" /></span>
                 <div className="flex-1 min-w-0">
                   <div className="font-semibold group-hover:text-primary">{n.t}</div>
@@ -61,14 +62,14 @@ function ProcurementPage() {
           <div className="rounded-2xl border bg-card p-8">
             <h3 className="text-2xl font-display">Supplier registration</h3>
             <p className="mt-3 text-sm text-muted-foreground leading-relaxed">All prospective suppliers must register on the Bank's supplier database. Provide your company profile, tax clearance, SSNIT clearance and PPA certificate.</p>
-            <a href="#" className="mt-5 inline-flex items-center rounded-full bg-primary text-primary-foreground px-5 h-11 text-sm font-medium">Register as supplier</a>
+            <a href={BOG.supplierRegistration} {...externalLinkProps} className="mt-5 inline-flex items-center rounded-full bg-primary text-primary-foreground px-5 h-11 text-sm font-medium hover:bg-[var(--primary-deep)] transition">Register as supplier</a>
           </div>
           <div className="rounded-2xl border bg-card p-8">
             <h3 className="text-2xl font-display">Procurement framework</h3>
             <p className="mt-3 text-sm text-muted-foreground leading-relaxed">Read the Bank's procurement policy, code of ethics for suppliers, and historical contract awards.</p>
             <div className="mt-5 flex flex-wrap gap-3">
               {["Procurement Policy", "Supplier Code", "Award Register"].map((x) => (
-                <a key={x} href="#" className="inline-flex items-center gap-2 rounded-full border px-4 h-10 text-xs font-medium hover:bg-secondary">{x} <Download className="h-3.5 w-3.5" /></a>
+                <a key={x} href={BOG.procurement} {...externalLinkProps} className="inline-flex items-center gap-2 rounded-full border px-4 h-10 text-xs font-medium hover:bg-secondary">{x} <Download className="h-3.5 w-3.5" /></a>
               ))}
             </div>
           </div>

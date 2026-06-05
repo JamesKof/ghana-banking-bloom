@@ -37,8 +37,8 @@ export function Nav() {
             <Link to="/tenders" className="hover:text-foreground transition">Tenders</Link>
             <Link to="/contact" className="hover:text-foreground transition">Contact</Link>
             <span className="opacity-50">|</span>
-            <a href="#" className="hover:text-foreground transition">EN</a>
-            <a href="#" className="text-muted-foreground/60">FR</a>
+            <button type="button" aria-pressed="true" className="hover:text-foreground transition font-medium text-foreground">EN</button>
+            <button type="button" aria-pressed="false" className="text-muted-foreground/60 hover:text-foreground transition" title="French translation coming soon">FR</button>
           </div>
         </div>
       </div>

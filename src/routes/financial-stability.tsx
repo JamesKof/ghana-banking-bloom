@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { PageShell } from "@/components/site/PageShell";
 import { PageHero } from "@/components/site/PageHero";
 import { ShieldCheck, AlertTriangle, Building2, Layers } from "lucide-react";
+import { BOG, externalLinkProps } from "@/lib/external";
 
 export const Route = createFileRoute("/financial-stability")({
   head: () => ({
@@ -75,7 +76,7 @@ function FSPage() {
       <section className="py-20">
         <div className="mx-auto max-w-7xl px-6 grid lg:grid-cols-3 gap-5">
           {["Financial Stability Report — H2 2025", "Banking Sector Report — Q1 2026", "Macroprudential Policy Statement 2026"].map((t) => (
-            <a key={t} href="#" className="group rounded-2xl border bg-card p-7 hover:shadow-soft transition">
+            <a key={t} href={BOG.fsReports} {...externalLinkProps} className="group rounded-2xl border bg-card p-7 hover:shadow-soft transition">
               <div className="text-xs uppercase tracking-widest text-gold">Report</div>
               <div className="mt-3 font-semibold leading-snug group-hover:text-primary">{t}</div>
               <div className="mt-6 text-sm text-primary font-medium">Download PDF →</div>

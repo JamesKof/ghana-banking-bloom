@@ -14,7 +14,7 @@ export function Stats() {
             <div className="text-xs uppercase tracking-[0.2em] text-gold">The Economy at a Glance</div>
             <h2 className="mt-3 text-4xl md:text-5xl font-display max-w-2xl">Key indicators, updated continuously.</h2>
           </div>
-          <a href="#" className="text-sm border-b border-gold pb-1 text-gold hover:opacity-80">View full dashboard →</a>
+          <a href="https://www.bog.gov.gh/economic-data/" target="_blank" rel="noopener noreferrer" className="text-sm border-b border-gold pb-1 text-gold hover:opacity-80">View full dashboard →</a>
         </div>
         <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-white/10 rounded-3xl overflow-hidden">
           {cards.map((c) => (

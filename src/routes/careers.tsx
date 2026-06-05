@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { PageShell } from "@/components/site/PageShell";
 import { PageHero } from "@/components/site/PageHero";
 import { Briefcase, MapPin, Clock, ArrowUpRight, GraduationCap, Users, ShieldCheck, Heart } from "lucide-react";
+import { BOG, externalLinkProps } from "@/lib/external";
 
 export const Route = createFileRoute("/careers")({
   head: () => ({
@@ -51,7 +52,7 @@ function CareersPage() {
           </div>
           <div className="rounded-2xl border bg-card divide-y overflow-hidden">
             {vacancies.map((v) => (
-              <a key={v.t} href="#" className="group flex items-center gap-6 p-6 hover:bg-secondary/40 transition">
+              <a key={v.t} href={BOG.careers} {...externalLinkProps} className="group flex items-center gap-6 p-6 hover:bg-secondary/40 transition">
                 <span className="hidden md:inline-flex h-11 w-11 items-center justify-center rounded-xl bg-secondary text-primary"><Briefcase className="h-5 w-5" /></span>
                 <div className="flex-1 min-w-0">
                   <div className="font-semibold group-hover:text-primary">{v.t}</div>
@@ -96,7 +97,7 @@ function CareersPage() {
               <div className="text-xs uppercase tracking-widest text-gold">Programme</div>
               <div className="mt-3 font-semibold text-lg">{c.t}</div>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{c.d}</p>
-              <a href="#" className="mt-5 inline-flex items-center text-sm font-medium text-primary">Learn more →</a>
+              <a href={BOG.careers} {...externalLinkProps} className="mt-5 inline-flex items-center text-sm font-medium text-primary">Learn more →</a>
             </div>
           ))}
         </div>

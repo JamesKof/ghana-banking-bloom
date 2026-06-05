@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { PageShell } from "@/components/site/PageShell";
 import { PageHero } from "@/components/site/PageHero";
 import { ArrowUpRight, TrendingDown, Target, Calendar } from "lucide-react";
+import { BOG, externalLinkProps } from "@/lib/external";
 
 export const Route = createFileRoute("/monetary-policy")({
   head: () => ({
@@ -57,11 +58,11 @@ function MPPage() {
               <div className="text-xs uppercase tracking-[0.2em] text-gold font-semibold">MPC Decisions</div>
               <h2 className="mt-3 text-3xl md:text-4xl font-display">Recent meetings</h2>
             </div>
-            <a href="#" className="text-sm font-medium text-primary hover:opacity-70">Archive →</a>
+            <a href={BOG.mpcDecisions} {...externalLinkProps} className="text-sm font-medium text-primary hover:opacity-70">Archive →</a>
           </div>
           <div className="rounded-2xl border bg-card divide-y">
             {decisions.map((d) => (
-              <a key={d.date} href="#" className="group flex flex-wrap md:flex-nowrap items-center gap-4 p-6 hover:bg-secondary/40 transition">
+              <a key={d.date} href={BOG.mpcDecisions} {...externalLinkProps} className="group flex flex-wrap md:flex-nowrap items-center gap-4 p-6 hover:bg-secondary/40 transition">
                 <div className="w-28 text-xs uppercase tracking-widest text-muted-foreground">{d.date}</div>
                 <div className="flex-1">
                   <div className="font-semibold group-hover:text-primary">{d.title}</div>
