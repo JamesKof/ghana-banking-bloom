@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { PageShell } from "@/components/site/PageShell";
 import { PageHero } from "@/components/site/PageHero";
 import { ArrowUpRight } from "lucide-react";
+import { BOG, externalLinkProps } from "@/lib/external";
 
 export const Route = createFileRoute("/press-releases")({
   head: () => ({
@@ -30,7 +31,7 @@ function PressPage() {
       <section className="py-16">
         <div className="mx-auto max-w-5xl px-6 space-y-4">
           {releases.map((r) => (
-            <a key={r.t} href="#" className="group block rounded-2xl border bg-card p-6 hover:shadow-soft transition">
+            <a key={r.t} href={BOG.mpcPressReleases} {...externalLinkProps} className="group block rounded-2xl border bg-card p-6 hover:shadow-soft transition">
               <div className="flex flex-wrap items-center gap-3 text-xs">
                 <span className="font-mono text-muted-foreground">{r.d}</span>
                 <span className="rounded-full bg-secondary px-2.5 py-0.5 uppercase tracking-widest text-[10px] font-semibold text-primary">{r.c}</span>

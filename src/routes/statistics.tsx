@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { PageShell } from "@/components/site/PageShell";
 import { PageHero } from "@/components/site/PageHero";
 import { Database, LineChart, Globe2, Building2, ArrowUpRight } from "lucide-react";
+import { BOG, externalLinkProps } from "@/lib/external";
 
 export const Route = createFileRoute("/statistics")({
   head: () => ({
@@ -16,10 +17,10 @@ export const Route = createFileRoute("/statistics")({
 });
 
 const datasets = [
-  { i: LineChart, t: "Monetary & Financial", d: "Money supply, interest rates, credit aggregates, MPR history." },
-  { i: Building2, t: "Banking Sector", d: "Aggregated balance sheet, CAR, NPLs, liquidity, profitability." },
-  { i: Globe2, t: "External Sector", d: "Balance of payments, reserves, exchange rates, trade." },
-  { i: Database, t: "Real Sector", d: "CIEA, business & consumer confidence, inflation by component." },
+  { i: LineChart, t: "Monetary & Financial", d: "Money supply, interest rates, credit aggregates, MPR history.", h: BOG.monetaryStats },
+  { i: Building2, t: "Banking Sector", d: "Aggregated balance sheet, CAR, NPLs, liquidity, profitability.", h: BOG.bankingSector },
+  { i: Globe2, t: "External Sector", d: "Balance of payments, reserves, exchange rates, trade.", h: BOG.externalSector },
+  { i: Database, t: "Real Sector", d: "CIEA, business & consumer confidence, inflation by component.", h: BOG.realSector },
 ];
 
 const headline = [
@@ -55,8 +56,8 @@ function StatsPage() {
           <div className="text-xs uppercase tracking-[0.2em] text-gold font-semibold">Datasets</div>
           <h2 className="mt-3 text-3xl md:text-4xl font-display">Browse the statistical database</h2>
           <div className="mt-10 grid md:grid-cols-2 lg:grid-cols-4 gap-5">
-            {datasets.map(({ i: Icon, t, d }) => (
-              <a key={t} href="#" className="group rounded-2xl border bg-card p-6 hover:shadow-soft transition">
+            {datasets.map(({ i: Icon, t, d, h }) => (
+              <a key={t} href={h} {...externalLinkProps} className="group rounded-2xl border bg-card p-6 hover:shadow-soft transition">
                 <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-secondary text-primary group-hover:bg-primary group-hover:text-primary-foreground transition"><Icon className="h-5 w-5" /></span>
                 <div className="mt-4 font-semibold">{t}</div>
                 <p className="mt-1.5 text-sm text-muted-foreground leading-relaxed">{d}</p>

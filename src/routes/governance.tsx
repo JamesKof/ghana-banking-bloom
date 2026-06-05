@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageShell } from "@/components/site/PageShell";
 import { PageHero } from "@/components/site/PageHero";
 import { Scale, ShieldCheck, FileText, Users } from "lucide-react";
+import { BOG, externalLinkProps } from "@/lib/external";
 
 export const Route = createFileRoute("/governance")({
   head: () => ({
@@ -47,7 +48,7 @@ function GovernancePage() {
             { t: "Amendment Act 918 (2016)", d: "Strengthened independence & MPC" },
             { t: "Code of Corporate Governance", d: "Board & committee charters" },
           ].map((c) => (
-            <a key={c.t} href="#" className="rounded-2xl border bg-card p-7 hover:shadow-soft transition">
+            <a key={c.t} href={BOG.governance} {...externalLinkProps} className="rounded-2xl border bg-card p-7 hover:shadow-soft transition">
               <div className="text-xs uppercase tracking-widest text-gold">Document</div>
               <div className="mt-3 font-semibold leading-snug">{c.t}</div>
               <div className="mt-1 text-sm text-muted-foreground">{c.d}</div>

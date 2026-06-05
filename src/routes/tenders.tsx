@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { PageShell } from "@/components/site/PageShell";
 import { PageHero } from "@/components/site/PageHero";
 import { FileText, Download } from "lucide-react";
+import { BOG, externalLinkProps } from "@/lib/external";
 
 export const Route = createFileRoute("/tenders")({
   head: () => ({
@@ -52,7 +53,7 @@ function TendersPage() {
                     <td className="p-4 font-medium">{t.t}</td>
                     <td className="p-4 hidden md:table-cell font-mono text-xs text-muted-foreground">{t.r}</td>
                     <td className="p-4 hidden md:table-cell font-mono text-xs text-primary">{t.c}</td>
-                    <td className="p-4 text-right"><a href="#" className="inline-flex items-center gap-1 text-xs text-primary font-medium"><FileText className="h-3.5 w-3.5" />Notice <Download className="h-3.5 w-3.5" /></a></td>
+                    <td className="p-4 text-right"><a href={BOG.tenders} {...externalLinkProps} className="inline-flex items-center gap-1 text-xs text-primary font-medium hover:opacity-80"><FileText className="h-3.5 w-3.5" />Notice <Download className="h-3.5 w-3.5" /></a></td>
                   </tr>
                 ))}
               </tbody>
